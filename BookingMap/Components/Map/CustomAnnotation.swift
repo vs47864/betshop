@@ -13,13 +13,9 @@ import MapKit
 class CustomAnnotation: NSObject, MKAnnotation
 {
     var coordinate: CLLocationCoordinate2D
-    let title: String?
-    let subtitle: String?
-    let type: Type
+    var type: Type
     
-    init(title: String, locationName: String, type: Type, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.subtitle = locationName
+    init(type: Type, coordinate: CLLocationCoordinate2D) {
         self.type = type
         self.coordinate = coordinate
         super.init()

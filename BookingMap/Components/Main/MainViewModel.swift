@@ -12,7 +12,6 @@ class MainViewModel
 {
     let locationService = LocationService()
     let networkService = NetworkingService()
-    
 }
 
 
@@ -22,10 +21,13 @@ extension MainViewModel: MainVMProtocol
         return Constants.title
     }
     
-    func getShops()
+    func getShops(completion: @escaping (_ shops : Betshops) -> Void)
     {
         networkService.getLocation(coordinates: "") { (shops) in
-            
+            if let shops = shops
+            {
+                completion(shops)
+            }
         }
     }
 }

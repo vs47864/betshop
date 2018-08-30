@@ -12,6 +12,7 @@ import MapKit
 class MainViewController: UIViewController {
 
     var mainVM: MainVMProtocol!
+    var selcetedAnnotation: CustomAnnotation!
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -21,13 +22,55 @@ class MainViewController: UIViewController {
         
         mapView.showsUserLocation = true
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.delegate = self
+        
+        mainVM.getShops { (shops) in
+            self.addShopAnntotations(shops: shops)
+        }
+    }
+    
+    func addShopAnntotations(shops: Betshops)
+    {
+        for shop in shops
+        {
+            let coordinate =  CLLocationCoordinate2DMake(shop.location.lat, shop.location.lng)
+            mapView.addAnnotation(CustomAnnotation(type: Type.basic, coordinate: coordinate))
+        }
+    }
+}
 
-        mainVM.getShops()
+extension MainViewController: MKMapViewDelegate
+{
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotation = view.annotation as! CustomAnnotation
+        if annotation.type == Type.basic
+        {
+            selcetedAnnotation = CustomAnnotation(type: annotation.type, coordinate: annotation.coordinate)
+            selcetedAnnotation?.type = Type.selected
+            mapView.removeAnnotation(annotation)
+            mapView.addAnnotation(self.selcetedAnnotation)
+            mapView.selectAnnotation(self.selcetedAnnotation, animated: false)
+        }
+        else
+        {
+            //TODO add to show specific
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView)
+    {
+        let annotation = view.annotation as! CustomAnnotation
+        if annotation.type == Type.selected
+        {
+            mapView.removeAnnotation(self.selcetedAnnotation)
+            annotation.type = Type.basic
+            mapView.addAnnotation(annotation)
+        }
     }
 }
 
 protocol MainVMProtocol
 {
-    func getShops()
+    func getShops(completion: @escaping (_ shops : Betshops) -> Void)
     func getTitle() -> String
 }
