@@ -14,10 +14,12 @@ class CustomAnnotation: NSObject, MKAnnotation
 {
     var coordinate: CLLocationCoordinate2D
     var type: Type
+    let shop: Betshop
     
-    init(type: Type, coordinate: CLLocationCoordinate2D) {
+    init(type: Type, shop: Betshop) {
         self.type = type
-        self.coordinate = coordinate
+        self.shop = shop
+        self.coordinate =  CLLocationCoordinate2DMake(shop.location.lat ,shop.location.lng)
         super.init()
     }
 }

@@ -20,7 +20,7 @@ class NetworkingService
 //            return
 //        }
         
-        guard let url = URL(string: "https://sa-api.info/api/casapariurilor/shop/list?boundingBox=44.581149%2C26.304202%2C44.299059%2C25.553844") else {
+        guard let url = URL(string: "https://sa-api.info/api/casapariurilor/shop/list?boundingBox=45.0%2C27.0%2C44.0%2C25.0") else {
             completion(nil)
             return
         }

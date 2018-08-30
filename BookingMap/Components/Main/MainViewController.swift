@@ -33,8 +33,7 @@ class MainViewController: UIViewController {
     {
         for shop in shops
         {
-            let coordinate =  CLLocationCoordinate2DMake(shop.location.lat, shop.location.lng)
-            mapView.addAnnotation(CustomAnnotation(type: Type.basic, coordinate: coordinate))
+            mapView.addAnnotation(CustomAnnotation(type: Type.basic, shop: shop))
         }
     }
 }
@@ -45,7 +44,7 @@ extension MainViewController: MKMapViewDelegate
         let annotation = view.annotation as! CustomAnnotation
         if annotation.type == Type.basic
         {
-            selcetedAnnotation = CustomAnnotation(type: annotation.type, coordinate: annotation.coordinate)
+            selcetedAnnotation = CustomAnnotation(type: annotation.type, shop: annotation.shop)
             selcetedAnnotation?.type = Type.selected
             mapView.removeAnnotation(annotation)
             mapView.addAnnotation(self.selcetedAnnotation)
