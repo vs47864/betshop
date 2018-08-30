@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58C188ED9C355FDE43758865 /* Pods_BookingMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E204D2C8BF322CCA718A46 /* Pods_BookingMap.framework */; };
 		B27E9F0C21382587008328AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F0B21382587008328AF /* AppDelegate.swift */; };
-		B27E9F0E21382587008328AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F0D21382587008328AF /* ViewController.swift */; };
-		B27E9F1121382587008328AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27E9F0F21382587008328AF /* Main.storyboard */; };
 		B27E9F132138258D008328AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27E9F122138258D008328AF /* Assets.xcassets */; };
 		B27E9F162138258D008328AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27E9F142138258D008328AF /* LaunchScreen.storyboard */; };
+		B27E9F20213825E6008328AF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F1E213825E6008328AF /* MainViewController.swift */; };
+		B27E9F21213825E6008328AF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27E9F1F213825E6008328AF /* MainViewController.xib */; };
+		B27E9F2521382644008328AF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F2421382644008328AF /* Coordinator.swift */; };
+		B27E9F27213827A1008328AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F26213827A1008328AF /* MainCoordinator.swift */; };
+		B27E9F29213827C2008328AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F28213827C2008328AF /* MainViewModel.swift */; };
+		B27E9F2D21382B7D008328AF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F2C21382B7D008328AF /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09E204D2C8BF322CCA718A46 /* Pods_BookingMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookingMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6B0F091F35ACF26E625465 /* Pods-BookingMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookingMap/Pods-BookingMap.release.xcconfig"; sourceTree = "<group>"; };
+		4DE6F53A253C3CE6ED949D03 /* Pods-BookingMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookingMap/Pods-BookingMap.debug.xcconfig"; sourceTree = "<group>"; };
 		B27E9F0821382587008328AF /* BookingMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27E9F0B21382587008328AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B27E9F0D21382587008328AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B27E9F1021382587008328AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B27E9F122138258D008328AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B27E9F152138258D008328AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B27E9F172138258D008328AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B27E9F1E213825E6008328AF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B27E9F1F213825E6008328AF /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		B27E9F2421382644008328AF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B27E9F26213827A1008328AF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B27E9F28213827C2008328AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B27E9F2C21382B7D008328AF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C188ED9C355FDE43758865 /* Pods_BookingMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94C82BDBD90DC15A5CD17185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DE6F53A253C3CE6ED949D03 /* Pods-BookingMap.debug.xcconfig */,
+				2B6B0F091F35ACF26E625465 /* Pods-BookingMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B27E9EFF21382587008328AF = {
 			isa = PBXGroup;
 			children = (
 				B27E9F0A21382587008328AF /* BookingMap */,
 				B27E9F0921382587008328AF /* Products */,
+				94C82BDBD90DC15A5CD17185 /* Pods */,
+				C156B14D33BFF385CD777482 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +79,65 @@
 			isa = PBXGroup;
 			children = (
 				B27E9F0B21382587008328AF /* AppDelegate.swift */,
-				B27E9F0D21382587008328AF /* ViewController.swift */,
-				B27E9F0F21382587008328AF /* Main.storyboard */,
+				B27E9F222138261E008328AF /* Components */,
+				B27E9F2B21382B59008328AF /* Services */,
+				B27E9F1D213825B0008328AF /* Supporting Files */,
+			);
+			path = BookingMap;
+			sourceTree = "<group>";
+		};
+		B27E9F1D213825B0008328AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B27E9F122138258D008328AF /* Assets.xcassets */,
 				B27E9F142138258D008328AF /* LaunchScreen.storyboard */,
 				B27E9F172138258D008328AF /* Info.plist */,
 			);
-			path = BookingMap;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B27E9F222138261E008328AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F232138262E008328AF /* Coordinator */,
+				B27E9F2A2138281B008328AF /* Main */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B27E9F232138262E008328AF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F2421382644008328AF /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B27E9F2A2138281B008328AF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F1E213825E6008328AF /* MainViewController.swift */,
+				B27E9F1F213825E6008328AF /* MainViewController.xib */,
+				B27E9F26213827A1008328AF /* MainCoordinator.swift */,
+				B27E9F28213827C2008328AF /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B27E9F2B21382B59008328AF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F2C21382B7D008328AF /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C156B14D33BFF385CD777482 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09E204D2C8BF322CCA718A46 /* Pods_BookingMap.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B27E9F1A2138258D008328AF /* Build configuration list for PBXNativeTarget "BookingMap" */;
 			buildPhases = (
+				1F33D8BCF2B706F886BE09D1 /* [CP] Check Pods Manifest.lock */,
 				B27E9F0421382587008328AF /* Sources */,
 				B27E9F0521382587008328AF /* Frameworks */,
 				B27E9F0621382587008328AF /* Resources */,
+				E4CEFC87717015B7DC749448 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,34 +201,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27E9F162138258D008328AF /* LaunchScreen.storyboard in Resources */,
+				B27E9F21213825E6008328AF /* MainViewController.xib in Resources */,
 				B27E9F132138258D008328AF /* Assets.xcassets in Resources */,
-				B27E9F1121382587008328AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F33D8BCF2B706F886BE09D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookingMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4CEFC87717015B7DC749448 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BookingMap/Pods-BookingMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookingMap/Pods-BookingMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B27E9F0421382587008328AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27E9F0E21382587008328AF /* ViewController.swift in Sources */,
+				B27E9F29213827C2008328AF /* MainViewModel.swift in Sources */,
 				B27E9F0C21382587008328AF /* AppDelegate.swift in Sources */,
+				B27E9F27213827A1008328AF /* MainCoordinator.swift in Sources */,
+				B27E9F20213825E6008328AF /* MainViewController.swift in Sources */,
+				B27E9F2D21382B7D008328AF /* LocationService.swift in Sources */,
+				B27E9F2521382644008328AF /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B27E9F0F21382587008328AF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B27E9F1021382587008328AF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B27E9F142138258D008328AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,11 +391,12 @@
 		};
 		B27E9F1B2138258D008328AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DE6F53A253C3CE6ED949D03 /* Pods-BookingMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UV6U5MPL6V;
-				INFOPLIST_FILE = BookingMap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BookingMap/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +410,12 @@
 		};
 		B27E9F1C2138258D008328AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B6B0F091F35ACF26E625465 /* Pods-BookingMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UV6U5MPL6V;
-				INFOPLIST_FILE = BookingMap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BookingMap/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
