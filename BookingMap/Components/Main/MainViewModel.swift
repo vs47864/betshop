@@ -11,11 +11,21 @@ import Foundation
 class MainViewModel
 {
     let locationService = LocationService()
+    let networkService = NetworkingService()
     
 }
 
 
 extension MainViewModel: MainVMProtocol
 {
+    func getTitle() -> String {
+        return Constants.title
+    }
     
+    func getShops()
+    {
+        networkService.getLocation(coordinates: "") { (shops) in
+            
+        }
+    }
 }

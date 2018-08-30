@@ -17,6 +17,11 @@
 		B27E9F27213827A1008328AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F26213827A1008328AF /* MainCoordinator.swift */; };
 		B27E9F29213827C2008328AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F28213827C2008328AF /* MainViewModel.swift */; };
 		B27E9F2D21382B7D008328AF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F2C21382B7D008328AF /* LocationService.swift */; };
+		B27E9F2F21383578008328AF /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F2E21383578008328AF /* NetworkingService.swift */; };
+		B27E9F32213836D8008328AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F31213836D8008328AF /* Constants.swift */; };
+		B27E9F34213837DB008328AF /* Betshops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F33213837DB008328AF /* Betshops.swift */; };
+		B27E9F3921384D26008328AF /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F3821384D26008328AF /* CustomAnnotation.swift */; };
+		B27E9F3B21384D3E008328AF /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		B27E9F26213827A1008328AF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B27E9F28213827C2008328AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B27E9F2C21382B7D008328AF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		B27E9F2E21383578008328AF /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		B27E9F31213836D8008328AF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B27E9F33213837DB008328AF /* Betshops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Betshops.swift; sourceTree = "<group>"; };
+		B27E9F3821384D26008328AF /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 				B27E9F0B21382587008328AF /* AppDelegate.swift */,
 				B27E9F222138261E008328AF /* Components */,
 				B27E9F2B21382B59008328AF /* Services */,
+				B27E9F30213836C3008328AF /* Utility */,
 				B27E9F1D213825B0008328AF /* Supporting Files */,
 			);
 			path = BookingMap;
@@ -99,6 +110,7 @@
 		B27E9F222138261E008328AF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B27E9F3721384D01008328AF /* Map */,
 				B27E9F232138262E008328AF /* Coordinator */,
 				B27E9F2A2138281B008328AF /* Main */,
 			);
@@ -128,8 +140,43 @@
 			isa = PBXGroup;
 			children = (
 				B27E9F2C21382B7D008328AF /* LocationService.swift */,
+				B27E9F35213837E7008328AF /* Networking */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B27E9F30213836C3008328AF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F31213836D8008328AF /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B27E9F35213837E7008328AF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F2E21383578008328AF /* NetworkingService.swift */,
+				B27E9F36213837EF008328AF /* Data */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B27E9F36213837EF008328AF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F33213837DB008328AF /* Betshops.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B27E9F3721384D01008328AF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F3821384D26008328AF /* CustomAnnotation.swift */,
+				B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		C156B14D33BFF385CD777482 /* Frameworks */ = {
@@ -257,7 +304,12 @@
 				B27E9F27213827A1008328AF /* MainCoordinator.swift in Sources */,
 				B27E9F20213825E6008328AF /* MainViewController.swift in Sources */,
 				B27E9F2D21382B7D008328AF /* LocationService.swift in Sources */,
+				B27E9F3B21384D3E008328AF /* CustomAnnotationView.swift in Sources */,
+				B27E9F2F21383578008328AF /* NetworkingService.swift in Sources */,
+				B27E9F3921384D26008328AF /* CustomAnnotation.swift in Sources */,
 				B27E9F2521382644008328AF /* Coordinator.swift in Sources */,
+				B27E9F32213836D8008328AF /* Constants.swift in Sources */,
+				B27E9F34213837DB008328AF /* Betshops.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

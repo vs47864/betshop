@@ -17,12 +17,17 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = mainVM.getTitle()
+        
         mapView.showsUserLocation = true
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+
+        mainVM.getShops()
     }
 }
 
 protocol MainVMProtocol
 {
-    
+    func getShops()
+    func getTitle() -> String
 }
