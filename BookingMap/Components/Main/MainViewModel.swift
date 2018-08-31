@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import MapKit
 
 class MainViewModel
 {
     let locationService = LocationService()
     let networkService = NetworkingService()
+    var routeToShop: ((_ coordinate: CLLocationCoordinate2D)->())!
 }
 
 
@@ -29,5 +31,10 @@ extension MainViewModel: MainVMProtocol
                 completion(shops)
             }
         }
+    }
+    
+    func goToMaps(coordinate: CLLocationCoordinate2D)
+    {
+        self.routeToShop(coordinate)
     }
 }

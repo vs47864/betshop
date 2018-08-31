@@ -7,5 +7,6 @@ target 'BookingMap' do
 
   # Pods for BookingMap
   pod 'Alamofire', '~> 4.7'
+  pod 'SnapKit', '~> 4.0.0'
 
 end

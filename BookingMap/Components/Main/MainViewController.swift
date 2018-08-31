@@ -8,17 +8,20 @@
 
 import UIKit
 import MapKit
+import SnapKit
 
 class MainViewController: UIViewController {
 
     var mainVM: MainVMProtocol!
     var selcetedAnnotation: CustomAnnotation!
-
+    var detailsView: DetailsView!
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = mainVM.getTitle()
+        addDetailsView()
         
         mapView.showsUserLocation = true
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
@@ -36,6 +39,29 @@ class MainViewController: UIViewController {
             mapView.addAnnotation(CustomAnnotation(type: Type.basic, shop: shop))
         }
     }
+    
+    func addDetailsView()
+    {
+        self.detailsView = DetailsView(frame: CGRect.zero)
+        self.detailsView.delagate = self
+        self.view.addSubview(self.detailsView!)
+        detailsView.snp.makeConstraints({ (make) in
+            make.leading.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view.snp.bottomMargin).offset(Constants.detailsViewHeight)
+            make.height.equalTo(Constants.detailsViewHeight)
+        })
+    }
+    
+    func animateDetailsPosition(offssetY: Double)
+    {
+        self.detailsView.snp.updateConstraints({ (make) in
+            make.bottom.equalTo(self.view.snp.bottomMargin).offset(offssetY)
+        })
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
 }
 
 extension MainViewController: MKMapViewDelegate
@@ -49,10 +75,11 @@ extension MainViewController: MKMapViewDelegate
             mapView.removeAnnotation(annotation)
             mapView.addAnnotation(self.selcetedAnnotation)
             mapView.selectAnnotation(self.selcetedAnnotation, animated: false)
+            detailsView.setView(shop: self.selcetedAnnotation.shop)
         }
         else
         {
-            //TODO add to show specific
+            animateDetailsPosition(offssetY: 0)
         }
     }
     
@@ -64,7 +91,20 @@ extension MainViewController: MKMapViewDelegate
             mapView.removeAnnotation(self.selcetedAnnotation)
             annotation.type = Type.basic
             mapView.addAnnotation(annotation)
+            animateDetailsPosition(offssetY: Constants.detailsViewHeight)
         }
+    }
+}
+
+extension MainViewController: DetailsViewDelegate
+{
+    func closeView() {
+        animateDetailsPosition(offssetY: Constants.detailsViewHeight)
+    }
+    
+    func routeToShop()
+    {
+        mainVM.goToMaps(coordinate: selcetedAnnotation.coordinate)
     }
 }
 
@@ -72,4 +112,5 @@ protocol MainVMProtocol
 {
     func getShops(completion: @escaping (_ shops : Betshops) -> Void)
     func getTitle() -> String
+    func goToMaps(coordinate: CLLocationCoordinate2D)
 }

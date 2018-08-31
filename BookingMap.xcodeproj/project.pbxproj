@@ -22,6 +22,8 @@
 		B27E9F34213837DB008328AF /* Betshops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F33213837DB008328AF /* Betshops.swift */; };
 		B27E9F3921384D26008328AF /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F3821384D26008328AF /* CustomAnnotation.swift */; };
 		B27E9F3B21384D3E008328AF /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */; };
+		B27E9F432138A030008328AF /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27E9F422138A030008328AF /* DetailsView.xib */; };
+		B27E9F452138A90C008328AF /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E9F442138A90C008328AF /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		B27E9F33213837DB008328AF /* Betshops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Betshops.swift; sourceTree = "<group>"; };
 		B27E9F3821384D26008328AF /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		B27E9F422138A030008328AF /* DetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsView.xib; sourceTree = "<group>"; };
+		B27E9F442138A90C008328AF /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				B27E9F3721384D01008328AF /* Map */,
 				B27E9F232138262E008328AF /* Coordinator */,
 				B27E9F2A2138281B008328AF /* Main */,
+				B27E9F462138AA66008328AF /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,6 +182,15 @@
 				B27E9F3A21384D3E008328AF /* CustomAnnotationView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		B27E9F462138AA66008328AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B27E9F422138A030008328AF /* DetailsView.xib */,
+				B27E9F442138A90C008328AF /* DetailsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C156B14D33BFF385CD777482 /* Frameworks */ = {
@@ -250,6 +264,7 @@
 				B27E9F162138258D008328AF /* LaunchScreen.storyboard in Resources */,
 				B27E9F21213825E6008328AF /* MainViewController.xib in Resources */,
 				B27E9F132138258D008328AF /* Assets.xcassets in Resources */,
+				B27E9F432138A030008328AF /* DetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +297,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BookingMap/Pods-BookingMap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -304,6 +321,7 @@
 				B27E9F27213827A1008328AF /* MainCoordinator.swift in Sources */,
 				B27E9F20213825E6008328AF /* MainViewController.swift in Sources */,
 				B27E9F2D21382B7D008328AF /* LocationService.swift in Sources */,
+				B27E9F452138A90C008328AF /* DetailsView.swift in Sources */,
 				B27E9F3B21384D3E008328AF /* CustomAnnotationView.swift in Sources */,
 				B27E9F2F21383578008328AF /* NetworkingService.swift in Sources */,
 				B27E9F3921384D26008328AF /* CustomAnnotation.swift in Sources */,

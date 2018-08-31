@@ -15,4 +15,5 @@ struct Constants
     static let pathURL = "/api/casapariurilor/shop/list?boundingBox"
     static let primaryColor = UIColor(red: 140/255.0, green: 184/255.0, blue: 43/255.0, alpha: 1.0)
     static let title = "Bet shops"
+    static let detailsViewHeight = 234.0
 }
