@@ -33,13 +33,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="099-68-11041" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-z8-YEa">
-                    <rect key="frame" x="56" y="131.5" width="287" height="20.5"/>
+                    <rect key="frame" x="56" y="127.5" width="287" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tele" translatesAutoresizingMaskIntoConstraints="NO" id="xkR-sH-MiL">
-                    <rect key="frame" x="16" y="125.5" width="24" height="32.5"/>
+                    <rect key="frame" x="16" y="121.5" width="24" height="32.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="VtI-WS-HEj"/>
                         <constraint firstAttribute="width" constant="24" id="a54-DS-ZJK"/>
@@ -125,7 +125,7 @@
                 <constraint firstItem="oP6-2a-Ktl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ZMR-c6-fy1"/>
                 <constraint firstItem="Z4C-z8-YEa" firstAttribute="centerY" secondItem="xkR-sH-MiL" secondAttribute="centerY" id="cId-QH-xBk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Z4C-z8-YEa" secondAttribute="trailing" constant="32" id="ey0-j6-gZA"/>
-                <constraint firstItem="xkR-sH-MiL" firstAttribute="top" secondItem="z5l-8s-als" secondAttribute="bottom" constant="16" id="k4W-MU-eoK"/>
+                <constraint firstItem="xkR-sH-MiL" firstAttribute="top" secondItem="z5l-8s-als" secondAttribute="bottom" constant="12" id="k4W-MU-eoK"/>
                 <constraint firstItem="TA7-n9-rUa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="qt8-6I-OkZ"/>
                 <constraint firstItem="Z4C-z8-YEa" firstAttribute="leading" secondItem="xkR-sH-MiL" secondAttribute="trailing" constant="16" id="rtj-4u-zdN"/>
                 <constraint firstItem="C9S-K1-U9k" firstAttribute="centerY" secondItem="13C-Xz-5Nz" secondAttribute="centerY" id="uIf-DR-7GP"/>

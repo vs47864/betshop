@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(self.detailsView!)
         detailsView.snp.makeConstraints({ (make) in
             make.leading.trailing.equalTo(self.view)
-            make.bottom.equalTo(self.view.snp.bottomMargin).offset(Constants.detailsViewHeight)
+            make.bottom.equalTo(self.view.snp.bottom).offset(Constants.detailsViewHeight)
             make.height.equalTo(Constants.detailsViewHeight)
         })
     }
@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
     func animateDetailsPosition(offssetY: Double)
     {
         self.detailsView.snp.updateConstraints({ (make) in
-            make.bottom.equalTo(self.view.snp.bottomMargin).offset(offssetY)
+            make.bottom.equalTo(self.view.snp.bottom).offset(offssetY)
         })
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
