@@ -37,6 +37,7 @@ class MainCoordinator: Coordinator
         }
         
         mainVC.mainVM = mainVM
+        mainVM.locationService.delegate = mainVC
         self.rootNC.pushViewController(mainVC, animated: true)
     }
 }

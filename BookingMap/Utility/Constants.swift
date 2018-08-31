@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 struct Constants
 {
@@ -16,4 +17,5 @@ struct Constants
     static let primaryColor = UIColor(red: 140/255.0, green: 184/255.0, blue: 43/255.0, alpha: 1.0)
     static let title = "Bet shops"
     static let detailsViewHeight = 234.0
+    static let defaultLocation = CLLocationCoordinate2D(latitude: 44.435105, longitude: 26.100019)
 }

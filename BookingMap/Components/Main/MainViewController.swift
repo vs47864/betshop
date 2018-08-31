@@ -108,6 +108,16 @@ extension MainViewController: DetailsViewDelegate
     }
 }
 
+extension MainViewController: LocationServiceDelegate
+{
+    func zoomToLocation(location: CLLocationCoordinate2D)
+    {
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
+    }
+    
+}
+
 protocol MainVMProtocol
 {
     func getShops(completion: @escaping (_ shops : Betshops) -> Void)
