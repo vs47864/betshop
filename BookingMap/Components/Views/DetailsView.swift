@@ -39,6 +39,13 @@ class DetailsView: UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topRight, .topLeft], cornerRadii: CGSize(width: 16.0, height: 16.0)).cgPath
+        self.layer.mask = shapeLayer;
+    }
+    
+    
     func setView(shop: Betshop)
     {
         lblTel.text = shop.phone
