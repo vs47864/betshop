@@ -59,6 +59,7 @@ extension LocationService: CLLocationManagerDelegate
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             delegate?.zoomToLocation(location: center)
+            locationManager.stopUpdatingLocation()
         }
     }
 }

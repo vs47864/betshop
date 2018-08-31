@@ -13,9 +13,34 @@ class CustomAnnotationView: MKAnnotationView
 {
     override var annotation: MKAnnotation? {
         willSet {
-            guard let customAnnotation = newValue as? CustomAnnotation else {return}
-            
-            image = UIImage(named: customAnnotation.type.rawValue)
+            if let cluster = newValue as? MKClusterAnnotation {
+                let count = cluster.memberAnnotations.count
+                
+                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 64, height: 88))
+
+                image = renderer.image { _ in
+                    
+                    UIImage(named: "basic")?.draw(in: CGRect(x: 0, y: 0, width: 64, height: 88))
+                    
+                    UIColor.white.setFill()
+                    UIBezierPath(ovalIn: CGRect(x: 8, y: 10, width: 48, height: 48)).fill()
+                    
+                    let attributes = [ NSAttributedStringKey.foregroundColor: Constants.blueColor,
+                                       NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 22)]
+                    let text = "\(count)"
+                    let size = text.size(withAttributes: attributes)
+                    let rect = CGRect(x: 32 - size.width / 2, y: 33 - size.height / 2, width: size.width, height: size.height)
+                    text.draw(in: rect, withAttributes: attributes)
+                }
+                
+                
+
+            } else {
+                clusteringIdentifier = "shop"
+                guard let customAnnotation = newValue as? CustomAnnotation else {return}
+                
+                image = UIImage(named: customAnnotation.type.rawValue)
+            }
         }
     }
 }

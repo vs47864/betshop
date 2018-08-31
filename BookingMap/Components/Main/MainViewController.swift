@@ -23,8 +23,10 @@ class MainViewController: UIViewController {
         self.title = mainVM.getTitle()
         addDetailsView()
         
+        mapView.mapType = .mutedStandard
         mapView.showsUserLocation = true
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         mapView.delegate = self
         
         mainVM.getShops { (shops) in
@@ -67,32 +69,41 @@ class MainViewController: UIViewController {
 extension MainViewController: MKMapViewDelegate
 {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let annotation = view.annotation as! CustomAnnotation
-        if annotation.type == Type.basic
+        if let annotation = view.annotation as? CustomAnnotation
         {
-            selcetedAnnotation = CustomAnnotation(type: annotation.type, shop: annotation.shop)
-            selcetedAnnotation?.type = Type.selected
-            mapView.removeAnnotation(annotation)
-            mapView.addAnnotation(self.selcetedAnnotation)
-            mapView.selectAnnotation(self.selcetedAnnotation, animated: false)
-            detailsView.setView(shop: self.selcetedAnnotation.shop)
-        }
-        else
-        {
-            animateDetailsPosition(offssetY: 0)
+            if annotation.type == Type.basic
+            {
+                selcetedAnnotation = CustomAnnotation(type: annotation.type, shop: annotation.shop)
+                selcetedAnnotation?.type = Type.selected
+                mapView.removeAnnotation(annotation)
+                mapView.addAnnotation(self.selcetedAnnotation)
+                mapView.selectAnnotation(self.selcetedAnnotation, animated: false)
+                detailsView.setView(shop: self.selcetedAnnotation.shop)
+            }
+            else
+            {
+                animateDetailsPosition(offssetY: 0)
+            }
         }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView)
     {
-        let annotation = view.annotation as! CustomAnnotation
-        if annotation.type == Type.selected
+        if let annotation = view.annotation as? CustomAnnotation
         {
-            mapView.removeAnnotation(self.selcetedAnnotation)
-            annotation.type = Type.basic
-            mapView.addAnnotation(annotation)
-            animateDetailsPosition(offssetY: Constants.detailsViewHeight)
+            if annotation.type == Type.selected
+            {
+                mapView.removeAnnotation(self.selcetedAnnotation)
+                annotation.type = Type.basic
+                mapView.addAnnotation(annotation)
+                animateDetailsPosition(offssetY: Constants.detailsViewHeight)
+            }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+        let cluster = MKClusterAnnotation(memberAnnotations: memberAnnotations)
+        return cluster
     }
 }
 
@@ -100,6 +111,7 @@ extension MainViewController: DetailsViewDelegate
 {
     func closeView() {
         animateDetailsPosition(offssetY: Constants.detailsViewHeight)
+        mapView.deselectAnnotation(self.selcetedAnnotation, animated: false)
     }
     
     func routeToShop()
