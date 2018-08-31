@@ -20,7 +20,7 @@ class CustomAnnotationView: MKAnnotationView
 
                 image = renderer.image { _ in
                     
-                    UIImage(named: "basic")?.draw(in: CGRect(x: 0, y: 0, width: 64, height: 88))
+                    UIImage(named: Type.basic.rawValue)?.draw(in: CGRect(x: 0, y: 0, width: 64, height: 88))
                     
                     UIColor.white.setFill()
                     UIBezierPath(ovalIn: CGRect(x: 8, y: 10, width: 48, height: 48)).fill()
@@ -36,7 +36,7 @@ class CustomAnnotationView: MKAnnotationView
                 
 
             } else {
-                clusteringIdentifier = "shop"
+                clusteringIdentifier = Constants.clusteringIdentifier
                 guard let customAnnotation = newValue as? CustomAnnotation else {return}
                 
                 image = UIImage(named: customAnnotation.type.rawValue)

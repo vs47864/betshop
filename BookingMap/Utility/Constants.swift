@@ -19,4 +19,5 @@ struct Constants
     static let title = "Bet shops"
     static let detailsViewHeight = 234.0
     static let defaultLocation = CLLocationCoordinate2D(latitude: 44.435105, longitude: 26.100019)
+    static let clusteringIdentifier = "shop"
 }

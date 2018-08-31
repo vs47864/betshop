@@ -57,13 +57,33 @@ class DetailsView: UIView {
         let startTime = dateFormatter.date(from: start)
         let endTime = dateFormatter.date(from: end)
         
-        if now > endTime! || now < startTime!
+        let calendar = Calendar.current
+        
+
+        var startComponents = calendar.dateComponents([.hour, .minute], from: startTime!)
+        var endComponents = calendar.dateComponents([.hour, .minute], from: endTime!)
+        
+        let nowComponents = calendar.dateComponents([.month, .day, .year], from: now)
+
+        startComponents.year  = nowComponents.year
+        startComponents.month = nowComponents.month
+        startComponents.day   = nowComponents.day
+        
+        endComponents.year  = nowComponents.year
+        endComponents.month = nowComponents.month
+        endComponents.day   = nowComponents.day
+        
+        
+        let startDate = calendar.date(from: startComponents)
+        let endDate = calendar.date(from: endComponents)
+        
+        if now > endDate! || now < startDate!
         {
             lblState.text = "Closed until: " + start
         }
         else
         {
-            lblState.text = "Open now until: " + start
+            lblState.text = "Open now until: " + end
         }
     }
     
